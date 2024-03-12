@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign Up Form</title>
+  <style>
+    /* Basic CSS for styling the form */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+      margin: 0;
+      padding: 0;
+    }
+    .top-bar {
+      background-color: #333;
+      color: #fff;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+    }
+    .form-container {
+      max-width: 400px;
+      width: 90%;
+      background-color: #ffffff;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+      overflow: hidden;
+      margin: 20px auto;
+    }
+    .form-header {
+      background-color: #00bfff;
+      padding: 20px;
+      text-align: center;
+    }
+    .form-header h2 {
+      margin: 0;
+      color: #ffffff;
+    }
+    .form-body {
+      padding: 20px;
+    }
+    input[type="text"], input[type="password"], input[type="submit"] {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      display: block;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      box-sizing: border-box;
+    }
+    input[type="submit"] {
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    input[type="submit"]:hover {
+      background-color: #45a049;
+    }
+    @media screen and (max-width: 768px) {
+      .form-container {
+        max-width: 90%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="top-bar">
+  <div class="logo">Ghost A.I</div>
+</div>
+
+<div class="form-container">
+  <div class="form-header">
+    <h2>Sign Up</h2>
+  </div>
+  <div class="form-body">
+    <form id="signupForm">
+      <input type="text" id="signupUsername" placeholder="Username" required>
+      <input type="password" id="signupPassword" placeholder="Password" required>
+      <input type="submit" value="Sign Up">
+    </form>
+    <p>Already have an account? <a href="index.html">Login</a></p>
+  </div>
+</div>
+
+<script>
+  // JavaScript for handling sign-up form submission
+  document.getElementById("signupForm").addEventListener("submit", function(event) {
+    event.preventDefault(); // Prevent default form submission
+    // Get form values
+    var username = document.getElementById("signupUsername").value;
+    var password = document.getElementById("signupPassword").value;
+    // Store user data in local storage
+    localStorage.setItem("username", username);
+    localStorage.setItem("password", password);
+    alert("Account created successfully!");
+    // Redirect to login page
+    window.location.href = "index.html";
+  });
+</script>
+
+</body>
+</html>
