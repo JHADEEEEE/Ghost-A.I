@@ -176,11 +176,16 @@
                 return "I'm just a virtual assistant, but thanks for asking!";
             } else if (userInput.toLowerCase().includes("tell me a joke")) {
                 return getRandomJoke(); // Get a random joke
+            } else if (userInput.toLowerCase().includes("ask for assistance")) {
+                return "Sure, I'm here to help! What do you need assistance with?";
+            } else if (userInput.toLowerCase().includes("information about ghost a.i.")) {
+                return "Ghost A.I. is an innovative virtual assistant designed to provide assistance and entertainment. If you have any specific questions, feel free to ask!";
+            } else if (userInput.toLowerCase().includes("thank you")) {
+                return "You're welcome! If you have any more questions or need assistance, just let me know.";
             } else {
-                return "I'm sorry, I didn't understand that. I'm still under development so i only have a limited prompt, here's the list of prompts:
-                    1. Hi/Hello
-                    2. How are you?
-                    3. Tell me a joke";
+                // Provide feedback and list available prompts
+                var availablePrompts = "1. Hi/Hello\n2. How are you?\n3. Tell me a joke\n4. Ask for assistance\n5. Information about Ghost A.I.\n6. Thank you";
+                return "I'm sorry, I didn't understand that. Here are the available prompts:\n\n" + availablePrompts;
             }
         }
 
